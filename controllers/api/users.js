@@ -1,9 +1,13 @@
 const router = require('express').Router()
-// const { Department } = require('./models');
+// const { Users } = require('./models');
 
 router.get("/", (req, res) => {
     try {
-        res.send("This is the user route!")
+        res.status(200).json(
+            {
+                message: "This is the user route!"
+            }
+        )
     } catch (err) {
         res.status(500).json(err)
     }
