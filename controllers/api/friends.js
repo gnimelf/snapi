@@ -3,7 +3,11 @@ const router = require('express').Router()
 
 router.get("/", (req, res) => {
     try {
-        res.send("The is the friends route")
+        res.status(200).json(
+            {
+                message: "The is the friends route"
+            }
+        )
     } catch (err) {
         res.status(500).json(err)
     }
