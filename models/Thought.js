@@ -11,4 +11,6 @@ const thoughtSchema = new mongoose.Schema({
     reactions: [Reaction]
 })
 
-module.exports = thoughtSchema
+const Thought = mongoose.Model('Thought', thoughtSchema)
+
+module.exports = Thought
