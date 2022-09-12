@@ -9,4 +9,6 @@ const reactionSchema = new mongoose.Schema({
     username: User
 })
 
-module.exports = reactionSchema
+const Reaction = mongoose.Model('Reaction', reactionSchema)
+
+module.exports = Reaction
