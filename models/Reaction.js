@@ -1,14 +1,16 @@
-const mongoose = require('mongoose')
-const User = require('./User')
+const { Schema, model } = require('mongoose')
 
-const reactionSchema = new mongoose.Schema({
+const reactionSchema = new Schema({
     reactionBody: {
         type: String,
         require: true
     },
-    username: User
+    username: {
+        type: Schema.Types.ObjectId,
+        ref: 'user'
+    },
 })
 
-const Reaction = mongoose.Model('Reaction', reactionSchema)
+const Reaction = model('reaction', reactionSchema)
 
 module.exports = Reaction

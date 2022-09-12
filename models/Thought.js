@@ -1,16 +1,20 @@
-const mongoose = require('mongoose')
-const Reaction = require('./Reaction')
-const User = require('./User')
+const { Schema, model} = require('mongoose')
 
-const thoughtSchema = new mongoose.Schema({
+const thoughtSchema = new Schema({
     thoughtText: {
         type: String,
         required: true
     },
-    username: User,
-    reactions: [Reaction]
+    username: {
+        type: Schema.Types.ObjectId,
+        ref: 'user'
+    },
+    reactions: [{
+        type: Schema.Types.ObjectId,
+        ref: 'reaction'
+    }],
 })
 
-const Thought = mongoose.Model('Thought', thoughtSchema)
+const Thought = model('thought', thoughtSchema)
 
 module.exports = Thought

@@ -1,17 +1,18 @@
-const mongoose = require('mongoose')
-const Reaction = require('./Reaction');
-const userSchema = require('./User');
+const { Schema, model } = require('mongoose')
 
-const friendsSchema = new mongoose.Schema({
+const friendsSchema = new Schema({
     thoughtText: { 
         type: String, 
         required: true 
     },
     username: {
-        type: String,
-        require: true
+        type: Schema.Types.ObjectId,
+        ref: 'user'
     },
-    reactions: [Reaction],
+    reactions: [{
+        type: Schema.Types.ObjectId,
+        ref: 'reaction'
+    }],
     reactionCount: {
         type: Number,
         require: true,
@@ -19,6 +20,6 @@ const friendsSchema = new mongoose.Schema({
     }
   });
 
-  const Friend = mongoose.model('Friend', friendsSchema) 
+  const Friend = model('friend', friendsSchema) 
 
   module.exports = Friend
