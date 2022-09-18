@@ -2,13 +2,20 @@ const { Schema, model} = require('mongoose')
 
 
 const userSchema = new Schema({
-    user: {
+    username: {
         type: String,
-        require: true
+        require: true,
+        trimmed: true
+    },
+    email: {
+        type: String,
+        require: true,
+        unique: true,
+        match: /.+\@.+\..+/,
     },
     friends: [{
         type: Schema.Types.ObjectId,
-        ref:'friend'
+        ref:'user'
     }],
     thoughts: [{
         type: Schema.Types.ObjectId,
