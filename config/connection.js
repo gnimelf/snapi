@@ -1,6 +1,11 @@
-const mongoose = require('mongoose');
+const { connect, connection } = require('mongoose');
 
-mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/snapiDB');
+const connectionString = 'mongodb://localhost:27017/snapiDB';
 
+connect(connectionString, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
+  
 
-module.exports = mongoose.connection
+module.exports = connection
