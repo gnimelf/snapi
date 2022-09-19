@@ -1,7 +1,5 @@
-const User = require('./User');
-const Friend = require('./Friend')
+const User = require('./User')
 const Thought = require('./Thought')
-const Reaction = require('./Reaction')
+const reactionSchema = require('./Reaction')
 
-
-models.exports = {User, Friend, Thought, Reaction}
+module.exports = {User, Thought, reactionSchema}
