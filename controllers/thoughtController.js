@@ -50,10 +50,10 @@ module.exports = {
     },
     // remove a thought by its _id
     deleteThought(req, res) {
-        Thought.findByIdAndRemove({ _id: req.params.thoughtId }).then(
+        Thought.findOneAndDelete({ _id: req.params.thoughtId }).then(
             (thought) => {
                 !thought
-                    ? res.status(404).json({ message: "No user with that ID" })
+                    ? res.status(404).json({ message: "No thought with that ID" })
                     : res.json({ message: `${thought}` });
             }
         );
