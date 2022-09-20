@@ -1,12 +1,21 @@
 const router = require('express').Router()
-// const { Thoughts } = require('./models');
+const {
+    getThoughts, 
+    createThought,
+    deleteThought,
+    getSingleThought,
+    createReaction,
+    removeReaction
+} = require ('../../controllers/thoughtController')
 
-router.get("/", (req, res) => {
-    try {
-        res.send("This is the thoughts route!")
-    } catch (err) {
-        res.status(500).json(err)
-    }
-})
+router.route('/').get(getThoughts).post(createThought),
+
+router.route('/:thoughtId').delete(deleteThought)
+
+router.route('/:thoughtId').get(getSingleThought)
+
+router.route('/:thoughtId/reactions').post(createReaction)
+
+router.route('/:thoughtId/reactions/:reactionId').delete(removeReaction);
 
 module.exports = router
