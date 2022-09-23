@@ -31,7 +31,7 @@ module.exports = {
     changeThought(req, res) {
         Thought.findOneAndUpdate(
             { _id: req.params.thoughtId },
-            { $set: { username: req.body.thoughtText } },
+            { $set: { thoughtText: req.body.thoughtText } },
             { runValidators: true, new: true }
         )
             .then((thought) =>
