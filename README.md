@@ -8,8 +8,6 @@ User seeds are provide to get the application up and running quickly.
 
 ## Table of Contents (Optional)
 
-If your README is long, add a table of contents to make it easy for users to find what they need.
-
 - [Installation](#installation)
 - [Demo](#demo)
 - [Usage](#usage)
