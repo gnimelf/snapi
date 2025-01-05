@@ -23,14 +23,14 @@ Run `npm run seed` to populate mongoDB
 
 ## Demo
 
-[Demo link here](https://drive.google.com/file/d/1EgN6cq4h033x-y0XQjtmPMVEgadsYX8M/view?usp=sharing)
+[Demo link here]
 
 ## Usage
 
 
 ### API Routes
 
-**`http://localhost/api/users`**
+**`http://localhost:{PORT}/api/users`**
 
 * `GET` all users
 

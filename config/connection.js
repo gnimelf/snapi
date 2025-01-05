@@ -5,10 +5,7 @@ mongoose.set('strictQuery', false);
 
 const connectionString = 'mongodb://localhost:27017/snapiDB';
 
-connect(connectionString, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
+connect(connectionString);
   
 
 module.exports = connection
